@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>旅游攻略 </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_325251_qnk88fxinxez5mi.css" />
+   	<link rel="stylesheet" type="text/css" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/default.css"/>
+    <script src="../../js/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script>
+        window.use_screen_base = '640';
+    </script>
+    <style type="text/css">
+    	.l-search {
+		    height: .88rem;
+		    background: #FDFDFD;
+		}
+		.l-searchleft {
+		    width: 6rem;
+		    float: left;
+		    padding: 0 .02rem 0 .17rem;
+		}
+		#searchForm {
+		    position: relative;
+		    margin: .11rem auto;
+		    float: left;
+		    width: 100%;
+		}
+		.form-search {
+		    height: .66rem;
+		    overflow: hidden;
+		    transition: all 0.3s ease;
+		    border-radius: 20px;
+		    background: rgba(255,255,255,0.3);
+		    padding: 0 .8rem 0 .4rem;
+		    border: 1px solid #C7C7C7;
+		}
+		#searchForm .button {
+		    background: transparent;
+		    width: .29rem;
+		    height: .32rem;
+		    border: 0;
+		    float: left;
+		    top: 50%;
+		    right: .4rem;
+		    position: absolute;
+		    margin-top: -.16rem;
+		    background-size: contain;
+		}
+		.form-search .input-text {
+		    font-size: .26rem;
+		    float: left;
+		    border: 0;
+		    width: 100%;
+		    background: none;
+		    font-family: Arial, Helvetica, sans-serif;
+		    outline: none;
+		    color: #A0A0A0;
+		    height: 100%;
+		}
+		.hot-title{
+			margin-top: 0.4rem;
+			padding: 10px 10px;
+			background: white;
+			font-size:0.25rem;
+			border-bottom: 1px solid #F7F7F7;
+		}
+		.l-list {
+			/*margin-top: 0.4rem;*/
+		    overflow: hidden;
+		    background: #ffffff;
+		}
+		.l-list li {
+		    height: 1.4rem;
+		    position: relative;
+		    padding: .17rem .25rem .17rem 2.4rem;
+		    border-bottom: 1px solid #F2F1F1;
+		}
+		.l-list li a {
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    position: relative;
+		}
+		.l-list li img {
+		    display: block;
+		    width: 2rem;
+		    height: 1.4rem;
+		    position: absolute;
+		    top: .17rem;
+		    left: .25rem;
+		}
+		.l-list li h3 {
+		    font: 600 .25rem/.46rem "";
+		    color: #000000;
+		}
+		style.css:4081
+		.l-list li p {
+		    display: block;
+		    color: #858585;
+		    font: 400 .24rem/.4rem "";
+		    padding-left: .25rem;
+		}
+		.l-list li span {
+		    margin-right: .25rem;
+		    font-size: .24rem;
+		    color: #b3b2b2;
+		}
+		.hot-p{
+			margin-top: 0.1rem;
+			height: 0.5rem;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+		.hot-p span{
+			display: inline-block;
+			float: left;	
+		}
+		.hot-p img{
+			width: 100% !important;
+			height: 100% !important;
+			position: relative !important;
+			top: 0 !important;
+			left:0 !important;
+		}
+    </style>
+    
+</head>
+<body >
+	<!--搜索-->
+	<div class="l-search">
+		<div class="l-searchleft">
+			<form id="searchForm">
+				<input id="labelLevelId" name="label_level" type="hidden" value="">
+				<input id="labelAreaId" name="label_area" type="hidden" value="">
+				<div class="form-search">
+					<button type="button" title="Search" class="button" onclick="searchForm(0)">
+						<i class="iconfont icon-sousuo_sousuo"></i>
+					</button>
+					<input id="search" type="text" name="name" value="" placeholder="旅游攻略输入关键字" class="input-text" maxlength="128">
+				</div>
+			</form>
+	
+		</div>
+		<!--<div class="l-searchright">
+			<img src="/jiawang/cms/Public/mobile/images/live-more2.png" id="searchLabelShow">
+		</div>-->
+	</div>
+	
+	<div class="hot-title">热门攻略</div>
+	<ul class="l-list" id="dataId">
+		<li>
+			<img src="../../jw-imgs/strategy/list01.png">
+			<a href="./strategy-detail.html">
+				<h3>一座有着千年历史的古城---处处彰显着特有的魅力 </h3>
+				<p class="hot-p clearfix">  
+					<span style="vertical-align: middle;"><i class="iconfont icon-yan"></i> (310)</span>
+					<span style="vertical-align: middle;"><i class="iconfont icon-liuyan"></i> (5310)</span>
+					<span style="float: right;width: 30px;height:30px;margin-top: -0.1rem;">
+						<img src="../../jw-imgs/strategy/list001.png" alt="" />
+					</span>
+				</p>
+			</a>
+		</li>
+		
+		<li>
+			<img src="../../jw-imgs/strategy/list02.png">
+			<a href="./strategy-detail.html">
+				<h3>山不在高，有仙则名。 </h3>
+				<p class="hot-p clearfix">  
+					<span style="vertical-align: middle;"><i class="iconfont icon-yan"></i> (230)</span>
+					<span style="vertical-align: middle;"><i class="iconfont icon-liuyan"></i> (110)</span>
+					<span style="float: right;width: 30px;height:30px;margin-top: -0.1rem;">
+						<img src="../../jw-imgs/strategy/list002.png" alt="" />
+					</span>
+				</p>
+			</a>
+		</li>
+		
+		<li>
+			<img src="../../jw-imgs/strategy/list03.png">
+			<a href="./strategy-detail.html">
+				<h3>一座有着千年历史的古城---处处彰显着特有的魅力 </h3>
+				<p class="hot-p clearfix">  
+					<span style="vertical-align: middle;"><i class="iconfont icon-yan"></i> (920)</span>
+					<span style="vertical-align: middle;"><i class="iconfont icon-liuyan"></i> (530)</span>
+					<span style="float: right;width: 30px;height:30px;margin-top: -0.1rem;">
+						<img src="../../jw-imgs/strategy/list003.png" alt="" />
+					</span>
+				</p>
+			</a>
+		</li>
+		
+		<li>
+			<img src="../../jw-imgs/strategy/list04.png">
+			<a href="./strategy-detail.html">
+				<h3>一座有着千年历史的古城---处处彰显着特有的魅力 </h3>
+				<p class="hot-p clearfix">  
+					<span style="vertical-align: middle;"><i class="iconfont icon-yan"></i> (210)</span>
+					<span style="vertical-align: middle;"><i class="iconfont icon-liuyan"></i> (680)</span>
+					<span style="float: right;width: 30px;height:30px;margin-top: -0.1rem;">
+						<img src="../../jw-imgs/strategy/list004.png" alt="" />
+					</span>
+				</p>
+			</a>
+		</li>
+		
+		<li>
+			<img src="../../jw-imgs/strategy/list05.png">
+			<a href="./strategy-detail.html">
+				<h3>一座有着千年历史的古城---处处彰显着特有的魅力 </h3>
+				<p class="hot-p clearfix">  
+					<span style="vertical-align: middle;"><i class="iconfont icon-yan"></i> (763)</span>
+					<span style="vertical-align: middle;"><i class="iconfont icon-liuyan"></i> (412)</span>
+					<span style="float: right;width: 30px;height:30px;margin-top: -0.1rem;">
+						<img src="../../jw-imgs/strategy/list005.png" alt="" />
+					</span>
+				</p>
+			</a>
+		</li>
+	</ul>
+
+
+<script type="text/javascript">
+	(function(a,b){var c="orientationchange"in b?"orientationchange":"resize",d=use_screen_base.indexOf("_mate"),e=parseInt(use_screen_base),f=a.documentElement,g=function(){var a=f.clientWidth,c=b.innerWidth;f.style.fontSize=100*(c/e)+"px"};if(/iPad.*OS|iPhone.*OS/.test(navigator.userAgent)&&d>0){var h=a.querySelectorAll("meta[name=viewport]");h[0]&&h[0].setAttribute("content","width=device-width, user-scalable=no, initial-scale="+1/b.devicePixelRatio)}g(),b.addEventListener(c,g,!1),delete use_screen_base})(document,window);
+</script>
+</body>
+</html>

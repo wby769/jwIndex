@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>订单列表</title>
+    <link rel="shortcut icon" href="http://photo.66diqiu.com/uploads/100002/favicon.jpg" mce_href="http://photo.66diqiu.com/uploads/100002/favicon.jpg" type="image/x-icon">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-tap-highlight" content="no">
+     <link rel="stylesheet" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/style.css?_=22121" type="text/css">
+<!--    <link rel="stylesheet" href="--><!--static/template/--><!--/mobile/css/base.css?_=22121" type="text/css">-->
+    <link rel="stylesheet" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/dl.css" type="text/css">
+    <link href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/component.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">.content table td{ border:1px solid} .swiper-container {width: 100%; }   .swiper-container img{width: 100%;}  </style>    <link rel="stylesheet" type="text/css" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/dialog.css" />
+    <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/default.css"/>
+    <script src="../../js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/mobilecommon.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/slider.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/dialog.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/jquery.lazyload.js"></script>
+    <script type="text/javascript">
+        var baseurl = 'http://nbbc.66diqiu.com',
+            basemobileurl = 'http://nbbc.66diqiu.com/mobile/index',
+            ADMINID = 0,
+            USERID = 104646,
+            loginUrl = 'http://nbbc.66diqiu.com/mobile/member/logout' ;
+        function unset_login(){
+            $.post(loginUrl,{
+                action:'unset'
+            },function(data){
+                var json = eval("("+data+")");
+                if(json['status']=='1'){
+                    if(json['action']=='unset'){
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/new_css/line-list.css"/>
+
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/mobilecommon.js"></script>
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/slider.js"></script>
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/dialog.js"></script>
+<style>
+    .fa-chevron-right{
+        position: absolute;
+            top: 50%;
+            right: 1rem;
+        color:#999999;
+        font-size:18px;
+    }
+    .mt-30{
+    	margin-top: -30px;
+    }
+</style>
+<div class="divBox box">
+    <div id="list">
+                <div class="list-item clearfix box">
+                        <div class="order-top box">
+                            <span>订单编号：201708242049005574</span>
+                            <span>未审核 / 未支付</span>
+                        </div>
+                        <div class="info box">
+                            <a href="http://nbbc.66diqiu.com/mobile/order/profile/?id=11081">
+                                <h5 class="even-ellipsis" style="margin-left: -6px;">【测试】徐州贾汪葡萄园</h5>
+                                <div class="i-note box">	
+                                    <i class="fa fa-angle-right fa-2x"></i>
+                                    <p>下单时间：2017-08-24 20:49:00</p>
+                                    <div class="clearfix">
+                                    	<p>人数:2</p>
+                                    </div>
+                                    <p class="price mt-30">
+                                                                               价格：¥298.00                                                                            
+                                    </p>
+                                </div>
+                            </a>
+                            <div class="info-btm box clearfix">
+                                <div class="info-btm-btn">
+                                	<a class="paywait" style="background: white;color: #0D0D0D;border:1px solid #000000;" onclick="cancelorder(11081)">取消订单</a>
+                                    <a class="paywait" href="http://nbbc.66diqiu.com/mobile/pay/index/11081">支付订单</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="list-item clearfix box">
+                        <div class="order-top box">
+                            <span>订单编号：201708242049005574</span>
+                            <span>支付完成 / 待游玩</span>
+                        </div>
+                        <div class="info box">
+                            <a href="http://nbbc.66diqiu.com/mobile/order/profile/?id=11081">
+                                <h5 class="even-ellipsis" style="margin-left: -6px;">【测试】贾汪中心农家院</h5>
+                                <div class="i-note box">
+                                    <i class="fa fa-angle-right fa-2x"></i>
+                                    <p>下单时间：2017-08-24 20:49:00</p>
+                                    <div class="clearfix">
+                                    	<p>人数:5</p>
+                                    </div>
+                                    <p class="price mt-30">
+                                                                               价格：¥188.00                                                                            
+                                    </p>
+                                </div>
+                            </a>
+                            <div class="info-btm box clearfix">
+                                <div class="info-btm-btn">
+                                    <a class="paywait" href="http://nbbc.66diqiu.com/mobile/pay/index/11081">退款</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+</div>
+<script type="text/javascript">
+
+    function cancelorder(order_id){
+
+        if(confirm('确定要取消订单吗？')) {
+//          $.post('http://nbbc.66diqiu.com/mobile/order/order_status', {
+//              order_id: order_id
+//          }, function (data) {
+//              alert(data.info);
+//              if (data.status == '1') {
+//
+//                  setTimeout(function(){
+//                      window.location.reload();
+//                  }, 1000);
+//              }
+//          }, 'json');
+        }
+    }
+    $(function(){
+        var slid = $("#sliderimg").slider({
+            loop: true
+        });
+        var page = 2;
+        var url = 'http://nbbc.66diqiu.com/mobile/order/line_list';
+        $('.btn-grey').click(function(){
+            var $this = $(this);
+            $this.text('加载中...');
+            $.get(url+(url.indexOf('?')!=-1 ?'&':'/?')+'isajax=1&page='+page, function(data){
+                if(data.length>0){
+                    var html = '';
+                    for(var i =0; i<data.length; i++){
+                        var item = data[i];
+                        var telephone = 025-66066606;
+                        html += '<div class="list-item fn-clear box">' +
+                                 '<div class="order-top box">'+
+                                 '<span>订单编号：'+item.order_sn +'</span>' +
+                                 '<span>'+ item.order_status_name +' / '+ item.pay_status_name +'</span>' +
+                                '</div>'+
+                                '<div class="info box">' +
+                                '<a href="'+item.link+'">' +
+                                '<h5>'+ item.line_name +'</h5>' +
+                                '<div class="i-note box">'+
+                                '<i class="fa fa-angle-right fa-2x"></i>'+
+                                '<p>出行时间：'+ item.go_date +'</p>' +
+                                '<p>下单时间：'+ item.add_time +'</p>';
+                                                html += '<p class="price">价格：¥'+item.order_account+'</p>' +
+                                '</div></a>';
+                            html += '<div class="info-btm box clearfix">' +
+                                '<a  class="phone-a" href="tel:'+ telephone +'">' +
+                                    '<i class="fa fa-phone fa-lg" style="color:#3fdbea;"></i>' +
+                                '<span class="boda-phone">拨打电话</span>'+
+                                '</a> ' +
+                                '<a href="#"></a> <a href="#"></a>';
+                        html +='<div class="info-btm-btn">';
+                        if(item.pay_status_name == '未支付' && item.order_status_name != '已取消'){
+                            html += '<a class="paywait" href="/mobile/pay/index/'+item.order_id+'" style="margin-right:5px;">待支付</a>';
+                        }else{
+                            html += '<a class="ccl" '+(item.order_status_name=='已取消'?'style="visibility:hidden"' : '')+'>支付完成</a>';
+                        }
+                        if(item.order_status_name != '已取消' && item.pay_status==1){
+                            html += '<a class="paywait" onclick="cancelorder('+item.order_id+')">取消订单</a>';
+                        }else if(item.order_status==3){
+                            html += '<a class="ccl">已取消</a>';
+                        }
+                        html += '</div></div></div></div>';
+                    }
+                    $('#load_more').before(html);
+                    page ++;
+                    $this.text('加载更多');
+                }else{
+
+                    $.dialog({
+                        style:'tip',
+                        width:200,
+                        closeTime:1000,
+                        content: '<p style="text-align: center;font-size:14px;">没有更多了</p>'
+                    }).open();
+                    $this.text('没有更多了');
+                }
+
+            },'json');
+        });
+    });
+</script>

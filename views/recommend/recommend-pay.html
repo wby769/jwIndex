@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>支付</title>
+    <link rel="shortcut icon" href="../../favicon.ico" />
+    <link rel="bookmark" href="../../favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../../css/default.css">
+    <link rel="stylesheet" type="text/css" href="../../css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/new-index.css">
+    <script src="../../js/jquery.js" type="text/javascript"></script>
+    <script src="../../js/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="../../js/fastclick.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_dyhwenj205yaatt9.css">
+    <style>
+    	.rec-pay-t{
+    		border-bottom: 1px solid #E1E1E1;
+    		padding-bottom: 10px;
+    	}
+    	.rec-pay-t span{
+    		display: inline-block;
+    		float: right;
+    	}
+    	
+    	.rec-pay-t span:first-child{
+    		float: left;
+    	}
+    	
+    	.rec-pay-ul li{
+    		height: 30px;
+    		line-height: 30px;
+    		float: right;
+    		font-weight: 600;
+    		font-size:16px;
+    		color: #FF7572;
+    	}
+    	
+    	.rec-pay-ul li:first-child{
+    		float: left;
+    		color: #242424;
+    	}
+    	
+    </style>
+</head>
+<body>
+<div class="divBox">
+    <header class="pay-head-box box">
+        <a href="order_detail.html">
+            <div class="pay-head-l" style="width: 100%;">
+                <h3>徐州出发刺激月亮漂流湾 轻松游浙西大峡谷漂流</h3>
+                <p class="rec-pay-t clearfix">
+                	<span>成人 5人 | 儿童 3人 | 3日</span>	
+                	<span>2017-07-01</span>
+                </p>
+                <ul class="rec-pay-ul clearfix">
+                	<li>待支付</li>
+                	<li>￥900.00</li>
+                </ul>
+            </div>
+        </a>
+    </header>
+    <article style="margin-top: 20px;">
+        <div class="pay-type-box box">
+        	<div style="padding: 10px;border-bottom: 1px solid #F0F0F0;">
+        		<p class="tlt" style="margin-left: 0;">选择支付方式</p>
+        	</div>
+            <div class="pay-item box">
+                <label>
+                    <img src="http://nbbc.66diqiu.com/static/template/weixin/mobile/img_pay_bef/icon3.png" alt="">
+                    微信支付<input type="radio" name="pay-rdo" value="wxpay">
+                    <i class="right iconfont icon-xuanzhong"></i>
+                </label>
+            </div>
+            <div class="pay-item box">
+                <label>
+                    <img src="http://nbbc.66diqiu.com/static/template/weixin/mobile/img_pay_bef/icon1.png" alt="">
+                    支付宝支付<input type="radio" name="pay-rdo" value="alipay">
+                    <i class="right iconfont icon-xuanzhong"></i>
+                </label>
+            </div>
+            <div class="pay-item box">
+                <label>
+                    <img src="http://nbbc.66diqiu.com/static/template/weixin/mobile/img_pay_bef/icon2.png" alt="">
+                    银行卡支付<input type="radio" name="pay-rdo" value="umpaygr" checked="">
+                    <i class="right iconfont icon-xuanzhong  o-color"></i>
+                </label>
+            </div>
+        </div>
+    </article>
+</div>
+<!--<div>-->
+    <a href="javascript:;" class="pay-btn">立即支付</a>
+<!--</div>-->
+</body>
+<script>
+    //支付选择
+    $(".pay-item").click(function(){
+        $(this).siblings().find("i").removeClass("o-color");
+        $(this).find("i").addClass("o-color");
+    })
+</script>
+</html>

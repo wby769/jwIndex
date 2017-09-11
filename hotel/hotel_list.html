@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>酒店列表</title>
+	<link rel="shortcut icon" href="../favicon.ico" />
+	<link rel="bookmark" href="../favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
+	<link rel="stylesheet" type="text/css" href="../css/new-index.css">
+	<script src="../js/jquery.js" type="text/javascript"></script>
+	<script src="../js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="../js/fastclick.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_7qeio05yobeasjor.css">
+</head>
+<body>
+	<div class="divBox">
+		<div class="temp none"></div>
+		<!--头部-->
+		<div class="nav-box box">
+			<div class="nav-date box">
+				<div class="data-l">
+					<p>住 06-13</p>
+					<p>离 06-14</p>
+				</div>
+				<div class="num-data">共1晚</div>
+			</div>
+			<div class="nav-search box">
+				<form>
+					<input type="text" placeholder="酒店名称/关键词等">
+				</form>
+			</div>
+			<a href="javascript:;" class="more-btn">
+				<i class="iconfont icon-gengduo"></i><br/>
+				<span>更多</span>
+			</a>
+			<!--功能-->
+			<div class="menu-box none">
+				<div class="clearfix menuWrap">
+					<div class="bor-r menu">排序<span class="sanjiao"></span></div>
+					<div class="bor-r menu">价格星级<span class="sanjiao none"></span></div>
+					<div class="menu">筛选<span class="sanjiao none"></span><span class="sx-num none">0</span></div>
+				</div>
+				<!--排序-->
+				<div class="menu-content box paixu-box">
+					<ul>
+						<li class="b-color item-li">
+							<a href="#">
+								默认排序
+								<i class="iconfont icon-duigou right"></i>
+							</a>
+						</li>
+						<li class="item-li">
+							<a href="#">
+								价格从低到高
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-li">
+							<a href="#">
+								价格从高到低
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-li">
+							<a href="#">
+								距离由远到近
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-li">
+							<a href="#">
+								好评由高到低
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--价格星级-->
+				<div class="menu-content box xingji-box none">
+					<ul>
+						<li class="b-color item-li buxian">
+							<a href="#">
+								星级不限
+								<i class="iconfont icon-duigou right"></i>
+							</a>
+						</li>
+						<li class="item-li">
+							<a href="#">
+								五星级
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-li">
+							<a href="#">
+								四星级
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-li">
+							<a href="#">
+								三星级
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-li">
+							<a href="#">
+								二星级及以下
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>价格</p>
+								<div class="qt-range" style="width: 100%;">
+									<span class="drop left"></span>
+									<span class="drop right"></span>
+									<i class="progress qt-bg-blue">
+										<i class="left qt-bg-grey"></i>
+										<i class="right qt-bg-grey"></i>
+									</i>
+									<ul class="mark qt-grid qt-blue">
+										<li><span>¥0</span></li>
+										<li><span>¥150</span></li>
+										<li><span>¥300</span></li>
+										<li><span>¥500</span></li>
+										<li><span>¥800</span></li>
+										<li><span style="margin-left:-11px">不限</span></li>
+									</ul>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="li-btm-box clearfix">
+						<div class="li-btm" style="width: 35%"><a href="javascript:;" class="del-btn">清空</a></div>
+						<div class="li-btm" style="width: 65%"><a href="javascript:;" class="sub-btn">确定</a></div>
+					</div>
+				</div>
+				<!--筛选-->
+				<div class="menu-content box none shaixuan-box">
+					<ul>
+						<li class="item-sx">
+							<a href="#">
+								叫醒服务
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-sx">
+							<a href="#">
+								行李寄存
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-sx">
+							<a href="#">
+								提供发票
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li class="item-sx">
+							<a href="#">
+								接机服务
+								<i class="iconfont icon-duigou right none"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>经济品牌<span style="font-size:14px;color:#666"> (可多选)</span></p>
+								<span class="chek">格林豪泰</span>
+								<span class="chek">如家</span>
+								<span class="chek">七天</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>高端品牌<span style="font-size:14px;color:#666"> (可多选)</span></p>
+								<span class="chek">皇冠假日</span>
+								<span class="chek">开元</span>
+								<span class="chek">温德姆</span>
+							</a>
+						</li>
+					</ul>
+					<div class="li-btm-box clearfix">
+						<div class="li-btm" style="width: 35%"><a href="javascript:;" class="del-btn">清空</a></div>
+						<div class="li-btm" style="width: 65%"><a href="javascript:;" class="sub-btn">确定</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--内容列表-->
+		<div class="ticketList-content box">
+			<div class="hotelList-item box">
+				<a href="hotel_detail.html">
+					<img src="../jw-imgs/1.png" alt="" class="list-img">
+					<div class="hotelList-info">
+						<h1 class="odd-ellipsis">徐州贾汪威尼斯汀大酒店</h1>
+						<p class="odd-ellipsis">
+							<span>豪华型</span>徐州 贾汪区 江山大道88号，近韶冯大街
+						</p>
+						<p class="dizhi odd-ellipsis">
+							<i class="iconfont icon-pc"></i>
+							<i class="iconfont icon-jj"></i>
+							<i class="iconfont icon-tcc"></i>
+							<i class="iconfont icon-wuxianwangqia"></i>
+							<i class="iconfont icon-js"></i>
+							<i class="iconfont icon-xc"></i>
+						</p>
+						<div class="hotelList-btm">
+							<span class="left" style="color:#28c5f2">评分 5.0</span>
+							<span class="price"><b>￥390</b>起</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="hotelList-item box">
+				<a href="hotel_detail.html">
+					<img src="../jw-imgs/2.png" alt="" class="list-img">
+					<div class="hotelList-info">
+						<h1 class="odd-ellipsis">格林豪泰 （徐州贾汪）</h1>
+						<p class="odd-ellipsis">
+							<span>豪华型</span>徐州 贾汪区 骆湖路1号古董河雄
+						</p>
+						<p class="dizhi odd-ellipsis">
+							<i class="iconfont icon-pc"></i>
+							<i class="iconfont icon-jj"></i>
+							<i class="iconfont icon-tcc"></i>
+							<i class="iconfont icon-wuxianwangqia"></i>
+							<i class="iconfont icon-js"></i>
+							<i class="iconfont icon-xc"></i>
+						</p>
+						<div class="hotelList-btm">
+							<span class="left" style="color:#28c5f2">评分 4.8</span>
+							<span class="price"><b>￥120</b>起</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="hotelList-item box">
+				<a href="hotel_detail.html">
+					<img src="../jw-imgs/3.png" alt="" class="list-img">
+					<div class="hotelList-info">
+						<h1 class="odd-ellipsis">徐州中汇国际会议中心</h1>
+						<p class="odd-ellipsis">
+							<span>豪华型</span>徐州 贾汪区 发展大道5号
+						</p>
+						<p class="dizhi odd-ellipsis">
+							<i class="iconfont icon-pc"></i>
+							<i class="iconfont icon-jj"></i>
+							<i class="iconfont icon-tcc"></i>
+							<i class="iconfont icon-wuxianwangqia"></i>
+							<i class="iconfont icon-js"></i>
+							<i class="iconfont icon-xc"></i>
+						</p>
+						<div class="hotelList-btm">
+							<span class="left" style="color:#28c5f2">评分 4.9</span>
+							<span class="price"><b>￥900</b>起</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="hotelList-item box">
+				<a href="hotel_detail.html">
+					<img src="../jw-imgs/4.png" alt="" class="list-img">
+					<div class="hotelList-info">
+						<h1 class="odd-ellipsis">徐州顺河假日酒店</h1>
+						<p class="odd-ellipsis">
+							<span>豪华型</span>徐州 贾汪区 湖滨新城环湖大道168号
+						</p>
+						<p class="dizhi odd-ellipsis">
+							<i class="iconfont icon-pc"></i>
+							<i class="iconfont icon-jj"></i>
+							<i class="iconfont icon-tcc"></i>
+							<i class="iconfont icon-wuxianwangqia"></i>
+							<i class="iconfont icon-js"></i>
+							<i class="iconfont icon-xc"></i>
+						</p>
+						<div class="hotelList-btm">
+							<span class="left" style="color:#28c5f2">评分 4.8</span>
+							<span class="price"><b>￥340</b>起</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="hotelList-item box">
+				<a href="hotel_detail.html">
+					<img src="../jw-imgs/5.png" alt="" class="list-img">
+					<div class="hotelList-info">
+						<h1 class="odd-ellipsis">徐州贾汪威尼斯汀大酒店</h1>
+						<p class="odd-ellipsis">
+							<span>豪华型</span>徐州 贾汪区 江山大道88号，近韶冯大街
+						</p>
+						<p class="dizhi odd-ellipsis">
+							<i class="iconfont icon-pc"></i>
+							<i class="iconfont icon-jj"></i>
+							<i class="iconfont icon-tcc"></i>
+							<i class="iconfont icon-wuxianwangqia"></i>
+							<i class="iconfont icon-js"></i>
+							<i class="iconfont icon-xc"></i>
+						</p>
+						<div class="hotelList-btm">
+							<span class="left" style="color:#28c5f2">评分 5.0</span>
+							<span class="price"><b>￥390</b>起</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="hotelList-item box">
+				<a href="hotel_detail.html">
+					<img src="../jw-imgs/4.png" alt="" class="list-img">
+					<div class="hotelList-info">
+						<h1 class="odd-ellipsis">徐州顺河假日酒店</h1>
+						<p class="odd-ellipsis">
+							<span>豪华型</span>徐州 贾汪区 湖滨新城环湖大道168号
+						</p>
+						<p class="dizhi odd-ellipsis">
+							<i class="iconfont icon-pc"></i>
+							<i class="iconfont icon-jj"></i>
+							<i class="iconfont icon-tcc"></i>
+							<i class="iconfont icon-wuxianwangqia"></i>
+							<i class="iconfont icon-js"></i>
+							<i class="iconfont icon-xc"></i>
+						</p>
+						<div class="hotelList-btm">
+							<span class="left" style="color:#28c5f2">评分 4.8</span>
+							<span class="price"><b>￥340</b>起</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="hotelList-item box">
+				<a href="hotel_detail.html">
+					<img src="../jw-imgs/5.png" alt="" class="list-img">
+					<div class="hotelList-info">
+						<h1 class="odd-ellipsis">徐州贾汪威尼斯汀大酒店</h1>
+						<p class="odd-ellipsis">
+							<span>豪华型</span>徐州 贾汪区 江山大道88号，近韶冯大街
+						</p>
+						<p class="dizhi odd-ellipsis">
+							<i class="iconfont icon-pc"></i>
+							<i class="iconfont icon-jj"></i>
+							<i class="iconfont icon-tcc"></i>
+							<i class="iconfont icon-wuxianwangqia"></i>
+							<i class="iconfont icon-js"></i>
+							<i class="iconfont icon-xc"></i>
+						</p>
+						<div class="hotelList-btm">
+							<span class="left" style="color:#28c5f2">评分 5.0</span>
+							<span class="price"><b>￥390</b>起</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</body>
+<!--返回顶部-->
+<a href="javascript:;" class="gotop none">
+	<div class="gotop-box">
+		<i class="iconfont icon-top"></i>
+		<p style="margin-top:-6px">顶部</p>
+	</div>
+</a>
+<script>
+    var width_all;
+    $(function() {
+        FastClick.attach(document.body);
+    });
+//	菜单功能切换
+	$(".more-btn").click(function(){
+	    $(".temp").toggle();
+		$(".menu-box").slideToggle();
+	})
+//	菜单选择切换
+	$(".menuWrap").find(".menu").each(function(index){
+	    $(this).click(function(){
+	        $(this).find(".sanjiao").show();
+            $(this).siblings().find(".sanjiao").hide();
+            $(".menu-box").find(".menu-content").hide().eq(index).show();
+            width_all=$(".progress").width()-9;
+		})
+	})
+//	点击蒙层
+    $(".temp").click(function(){
+        $(".menu-box").hide();
+        $(".temp").hide();
+	})
+//	内容选择
+	$(".menu-content").find(".item-li").click(function(){
+	    $(this).siblings().find("i").hide();
+	    $(this).find("i").show();
+        $(this).addClass("b-color").siblings().removeClass("b-color");
+	})
+//	排序
+	$(".paixu-box").find(".item-li").click(function(){
+        $(".menu-box").hide();
+        $(".temp").hide();
+	})
+//	价格星级
+	$(".xingji-box").find(".del-btn").click(function(){
+	    $(this).parent().parent().parent().find(".buxian").click();
+	})
+//	筛选
+	$(".shaixuan-box").find(".del-btn").click(function(){
+		$(this).parent().parent().parent().find(".item-sx").removeClass("b-color");
+        $(this).parent().parent().parent().find(".item-sx").find("i").hide();
+        $(this).parent().parent().parent().find(".chek").removeClass("chek-active");
+	})
+    $(".shaixuan-box").find(".chek").click(function(){
+        $(this).toggleClass("chek-active");
+	})
+
+    $(".shaixuan-box").find(".item-sx").click(function(){
+		$(this).toggleClass("b-color");
+		$(this).find("i").toggle();
+    })
+//	确定统计求和
+    $(".shaixuan-box").find(".sub-btn").click(function(){
+		var sum1=$(".shaixuan-box").find(".b-color").length;
+        var sum2=$(".shaixuan-box").find(".chek-active").length;
+		$(".sx-num").text(sum1+sum2).show();
+		if($(".sx-num").text()==0){
+            $(".sx-num").hide();
+		}
+    })
+//	确定
+    $(".menu-content").find(".sub-btn").click(function(){
+        $(".menu-box").hide();
+        $(".temp").hide();
+    })
+    //返回顶部
+    $(window).scroll(function(){
+        if ($(window).scrollTop()>10){
+            $(".gotop").show();
+        }else{
+            $(".gotop").hide();
+        }
+    });
+    //当点击跳转链接后，回到页面顶部位置
+    $(".gotop").click(function(){
+        $('body,html').animate({scrollTop:0},500);
+        return false;
+    });
+    <!--价格滑块-->
+	var startX=0;
+    var startX1=0;
+    var leftX=0;
+    var rightX=0;
+
+//    左按钮
+    $('.drop.left').on('touchstart',function(e) {
+        e.preventDefault();
+        var _touch = e.originalEvent.targetTouches[0];
+        var _x= _touch.pageX;
+		startX=_x;
+    });
+    $('.drop.left').on('touchmove',function(e) {
+        e.preventDefault();
+        var _touch = e.originalEvent.targetTouches[0];
+        var _x= _touch.pageX;
+        var leftX_move=_x-startX;
+
+        var w_r = $(".qt-bg-grey.right").width();
+
+        if(leftX+leftX_move<0){
+            return false;
+        }
+		if(w_r==Math.round(width_all*0.2)){
+            if(leftX+leftX_move>Math.round(width_all*0.6)){
+                $(this).css("left",width_all*0.6);
+                $(".qt-bg-grey.left").width(width_all*0.6);
+			}else{
+                $(this).css("left",leftX+leftX_move);
+                $(".qt-bg-grey.left").width(leftX+leftX_move);
+			}
+		}else if(w_r==Math.round(width_all*0.4)){
+            if(leftX+leftX_move>Math.round(width_all*0.4)){
+                $(this).css("left",width_all*0.4);
+                $(".qt-bg-grey.left").width(width_all*0.4);
+            }else{
+                $(this).css("left",leftX+leftX_move);
+                $(".qt-bg-grey.left").width(leftX+leftX_move);
+            }
+		}else if(w_r==Math.round(width_all*0.6)){
+            if(leftX+leftX_move>Math.round(width_all*0.2)){
+                $(this).css("left",width_all*0.2);
+                $(".qt-bg-grey.left").width(width_all*0.2);
+            }else{
+                $(this).css("left",leftX+leftX_move);
+                $(".qt-bg-grey.left").width(leftX+leftX_move);
+            }
+        }else if(w_r==Math.round(width_all*0.8)){
+            if(leftX+leftX_move>0){
+                $(this).css("left",0);
+                $(".qt-bg-grey.left").width(0);
+            }else{
+                $(this).css("left",leftX+leftX_move);
+                $(".qt-bg-grey.left").width(leftX+leftX_move);
+            }
+        }else{
+            if(leftX+leftX_move>Math.round(width_all*0.8)){
+                $(this).css("left",width_all*0.8);
+                $(".qt-bg-grey.left").width(width_all*0.8);
+            }else{
+                $(this).css("left",leftX+leftX_move);
+                $(".qt-bg-grey.left").width(leftX+leftX_move);
+            }
+		}
+    });
+    $('.drop.left').on('touchend',function(e) {
+        e.preventDefault();
+        var _touch = e.originalEvent.changedTouches[0];
+        var _x= _touch.pageX;
+        leftX=parseInt($(this).css("left"));
+		if(leftX<width_all*0.1){
+            $(this).css("left",0);
+            $(".qt-bg-grey.left").width(0);
+		}else if(leftX<width_all*0.3 && leftX>width_all*0.1){
+            $(this).css("left",width_all*0.2);
+            $(".qt-bg-grey.left").width(width_all*0.2);
+		}else if(leftX<width_all*0.5 && leftX>width_all*0.3){
+            $(this).css("left",width_all*0.4);
+            $(".qt-bg-grey.left").width(width_all*0.4);
+        }else if(leftX<width_all*0.7 && leftX>width_all*0.5){
+            $(this).css("left",width_all*0.6);
+            $(".qt-bg-grey.left").width(width_all*0.6);
+        }else if(leftX>width_all*0.7){
+            $(this).css("left",width_all*0.8);
+            $(".qt-bg-grey.left").width(width_all*0.8);
+        }
+        leftX=parseInt($(this).css("left"));
+    });
+
+//	右按钮
+    $('.drop.right').on('touchstart',function(e) {
+        e.preventDefault();
+        var _touch = e.originalEvent.targetTouches[0];
+        var _x= _touch.pageX;
+        startX1=_x;
+//        console.log("start"+_x);
+    });
+    $('.drop.right').on('touchmove',function(e) {
+        e.preventDefault();
+        var _touch = e.originalEvent.targetTouches[0];
+        var _x= _touch.pageX;
+        var rightX_move=startX1-_x;
+
+        var w_r = $(".qt-bg-grey.left").width();
+//        console.log(w_r+"---"+Math.round(width_all*0.8));
+
+        if(rightX+rightX_move<0){
+            return false;
+        }
+        if(w_r==Math.round(width_all*0.2)){
+            if(rightX+rightX_move>Math.round(width_all*0.6)){
+                $(this).css("right",width_all*0.6);
+                $(".qt-bg-grey.right").width(width_all*0.6);
+            }else{
+                $(this).css("right",rightX+rightX_move);
+                $(".qt-bg-grey.right").width(rightX+rightX_move);
+            }
+        }else if(w_r==Math.round(width_all*0.4)){
+            if(rightX+rightX_move>Math.round(width_all*0.4)){
+                $(this).css("right",width_all*0.4);
+                $(".qt-bg-grey.right").width(width_all*0.4);
+            }else{
+                $(this).css("right",rightX+rightX_move);
+                $(".qt-bg-grey.right").width(rightX+rightX_move);
+            }
+        }else if(w_r==Math.round(width_all*0.6)){
+            if(rightX+rightX_move>Math.round(width_all*0.2)){
+                $(this).css("right",width_all*0.2);
+                $(".qt-bg-grey.right").width(width_all*0.2);
+            }else{
+                $(this).css("right",rightX+rightX_move);
+                $(".qt-bg-grey.right").width(rightX+rightX_move);
+            }
+        }else if(w_r==Math.round(width_all*0.8)){
+            if(rightX+rightX_move>0){
+                $(this).css("right",0);
+                $(".qt-bg-grey.right").width(0);
+            }else{
+                $(this).css("right",rightX+rightX_move);
+                $(".qt-bg-grey.right").width(rightX+rightX_move);
+            }
+        }else{
+            if(rightX+rightX_move>Math.round(width_all*0.8)){
+                $(this).css("right",width_all*0.8);
+                $(".qt-bg-grey.right").width(width_all*0.8);
+            }else{
+                $(this).css("right",rightX+rightX_move);
+                $(".qt-bg-grey.right").width(rightX+rightX_move);
+            }
+        }
+    });
+    $('.drop.right').on('touchend',function(e) {
+        e.preventDefault();
+        var _touch = e.originalEvent.changedTouches[0];
+        var _x= _touch.pageX;
+        rightX=parseInt($(this).css("right"));
+        if(rightX<width_all*0.1){
+            $(this).css("right",0);
+            $(".qt-bg-grey.right").width(0);
+        }else if(rightX<width_all*0.3 && rightX>width_all*0.1){
+            $(this).css("right",width_all*0.2);
+            $(".qt-bg-grey.right").width(width_all*0.2);
+        }else if(rightX<width_all*0.5 && rightX>width_all*0.3){
+            $(this).css("right",width_all*0.4);
+            $(".qt-bg-grey.right").width(width_all*0.4);
+        }else if(rightX<width_all*0.7 && rightX>width_all*0.5){
+            $(this).css("right",width_all*0.6);
+            $(".qt-bg-grey.right").width(width_all*0.6);
+        }else if(rightX>width_all*0.7){
+            $(this).css("right",width_all*0.8);
+            $(".qt-bg-grey.right").width(width_all*0.8);
+        }
+        rightX=parseInt($(this).css("right"));
+//        console.log("end"+_x);
+    });
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

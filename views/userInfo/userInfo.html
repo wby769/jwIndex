@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>个人详细资料</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="shortcut icon" href="http://photo.66diqiu.com/uploads/100002/favicon.jpg" mce_href="http://photo.66diqiu.com/uploads/100002/favicon.jpg" type="image/x-icon">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-tap-highlight" content="no">
+     <link rel="stylesheet" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/style.css?_=22121" type="text/css">
+<!--    <link rel="stylesheet" href="--><!--static/template/--><!--/mobile/css/base.css?_=22121" type="text/css">-->
+    <link rel="stylesheet" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/dl.css" type="text/css">
+    <link href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/component.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">.content table td{ border:1px solid} .swiper-container {width: 100%; }   .swiper-container img{width: 100%;}  </style>    <link rel="stylesheet" type="text/css" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/dialog.css" />
+    <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/default.css"/>
+    <script src="../../js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/mobilecommon.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/slider.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/dialog.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/jquery.lazyload.js"></script>
+    <script type="text/javascript">
+        var baseurl = 'http://nbbc.66diqiu.com',
+            basemobileurl = 'http://nbbc.66diqiu.com/mobile/index',
+            ADMINID = 0,
+            USERID = 104646,
+            loginUrl = 'http://nbbc.66diqiu.com/mobile/member/logout' ;
+        function unset_login(){
+            $.post(loginUrl,{
+                action:'unset'
+            },function(data){
+                var json = eval("("+data+")");
+                if(json['status']=='1'){
+                    if(json['action']=='unset'){
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/mobilecommon.js"></script>
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/slider.js"></script>
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/dialog.js"></script>
+<!--引入CSS-->
+<link rel="stylesheet" type="text/css" href="http://nbbc.66diqiu.com/static/public/Lib/webuploader/webuploader.css">
+<!--引入JS-->
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/public/Lib/webuploader/webuploader.js"></script>
+<style>
+    #my-info{color:#3fdbea; }
+    /*  性别单选颜色  */
+    .weui-cells_radio .weui-check:checked+.weui-icon-checked:before{color:#3fdbea;}
+    /*按钮样式*/
+    .sub-btn{width:100%;padding:10% 15%;}
+    .weui-btn_default{color:#fff;background-color:#39c5d2;}
+    .weui-btn{font-size:16px;}
+    .user-head-top{
+        width:60px;
+        height:60px;
+        border-radius:50%;
+    }
+    .user-head-top img{
+        width:100%;
+        height:100%;
+        border-radius:50%;
+    }
+    .user-content-box{
+        margin-top:-1px;
+    }
+    #filePicker>div{
+        width:100% !important;
+        height:100% !important;
+    }
+</style>
+<div class="divBox box">
+    <form action="" class="listForm" method="post">
+        <!--  头像   -->
+        <div class="weui-cells">
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__hd user-head-top">
+                    <img id="avatar_box"  src="../../jw-imgs/10.png">
+<!--                    <div  id="filePicker" style="position: absolute;top: 0;left: 0;opacity:0;right: 0;bottom: 0;"></div>-->
+                </div>
+                <div class="weui-cell__bd"></div>
+                <div class="weui-cell__ft">选择头像
+                    <div  id="filePicker" style="position: absolute;top: 0;left: 0;opacity:0;right: 0;bottom: 0;"></div>
+                </div>
+            </a>
+        </div>
+        <div class="weui-cells weui-cells_form user-content-box">
+            <!--  用户名  -->
+                            <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">用户名</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text"  placeholder="用户名" value="" name="name">
+                    </div>
+                </div>
+                        <!--  姓名  -->
+                        <!--  手机   -->
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">手机</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" name="mobile" placeholder="请输入手机号" type="text" value="" readonly />
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">个人简介</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" name="company" placeholder="" type="text" value="" />
+                </div>
+            </div>
+        </div>
+        <!-- 性别 -->
+        <div class="weui-cells__title">性别</div>
+        <div class="weui-cells weui-cells_radio">
+            <label class="weui-cell weui-check__label" for="x11">
+                <div class="weui-cell__bd">
+                    <p>男</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" class="weui-check" name="gender" value="1" id="x11"  checked="checked" >
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+            <label class="weui-cell weui-check__label" for="x12">
+                <div class="weui-cell__bd">
+                    <p>女</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" class="weui-check" name="gender" id="x12" value="2"  >
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+        </div>
+        <div class="sub-btn box col_div">
+            <a href="javascript:;" class="weui-btn weui-btn_default btn" title="修改">确认修改</a>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function alert_popup(text){
+        $.dialog({
+            style:'tip',
+            width:200,
+            closeTime:500,
+            content: '<p style="text-align: center">'+text+'</p>'
+        }).open();
+    }
+$(function(){
+    $('.btn').click(function(){
+        if($('input[name="name"]').val().length == 0){
+            alert_popup('请输入用户名');
+            return false;
+        }
+        var name = $('input[name="name"]').val();
+        var company = $('input[name="company"]').val();
+        var gender = $('input[name="gender"]:checked').val();
+        $.post('http://nbbc.66diqiu.com/mobile/member/edit_member',{
+            name: name,
+            gender: gender,
+            company: company
+        },function(data){
+            alert(data.info);
+            if(data.status=='1')
+            {
+                window.location.reload() ;
+            }
+            return false;
+        },'json')
+    })
+});
+//    文件上传
+    function upload_image(server_url,clickID,inputID,replaceId){
+
+        var // 优化retina, 在retina下这个值是2
+            ratio = window.devicePixelRatio || 1,
+
+        // 缩略图大小
+            thumbnailWidth = 100 * ratio,
+            thumbnailHeight = 100 * ratio,
+
+        // Web Uploader实例
+            uploader;
+
+        // 初始化Web Uploader
+        uploader = WebUploader.create({
+
+            // 自动上传。
+            auto: true,
+
+            // swf文件路径
+            //swf: 'http://nbbc.66diqiu.com/static/public/Lib/webuploader/js/Uploader.swf',
+
+            // 文件接收服务端。
+            server: server_url,
+
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: '#'+clickID,
+
+            // 只允许选择文件，可选。
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeTypes: 'image/*'
+            }
+        });
+
+        // 文件上传过程中创建进度条实时显示。
+        uploader.on( 'uploadProgress', function( file, percentage ) {
+
+            $('#'+replaceId).attr('src','/static/public/images/load.gif');
+            var $progress = $( '#'+replaceId).next('span') ;
+            $progress.empty().html('完成'+Math.floor(percentage * 100) + '%...');
+        });
+
+        // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+        uploader.on('uploadSuccess',function( file,ret ) {
+            if(ret.status==0){
+                alert(ret.info);
+            }else{
+                $('#'+inputID).val(ret.info);
+                $('#'+replaceId).attr('src',ret.info);
+            }
+            $( '#'+file.id ).addClass('upload-state-done');
+            $( '#'+replaceId).next('span').empty();
+            window.location.reload();
+        });
+    }
+    upload_image("http://nbbc.66diqiu.com/member/index/upload_avatar",'filePicker','face_image','avatar_box');
+</script>

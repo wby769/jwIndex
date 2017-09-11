@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>贾汪旅游</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="bookmark" href="favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/new-index.css">
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="js/swiper.min.js"></script>
+	<!-- 阿里图标库网址 -->
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_nmm1la5973r6n7b9.css">
+</head>
+<body>
+	<div class="divBox">
+		<!-- head -->
+		<div class="headWrap">
+			<!-- 搜索内容 -->
+			<div class="search-box">
+				<div class="search-inp">
+					<input type="" name="" value="请输入搜索内容">
+				</div>
+			</div>
+			<!-- 个人中心 -->
+			<a href="./views/userInfo/center.html" title="" class="user-box">
+				<i class="iconfont icon-geren"></i>
+			</a>
+			<!-- banner轮播图 -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="jw-imgs/ban1.jpg">
+					</div>
+					<div class="swiper-slide">
+						<img src="jw-imgs/ban2.jpg">
+					</div>
+					<div class="swiper-slide">
+						<img src="jw-imgs/ban3.jpg">
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<script>
+			    var swiper = new Swiper('.swiper-container', {
+			        pagination: '.swiper-pagination',
+			        paginationClickable: true,
+			        touchRatio : 0.5,
+			        loop:true,
+			        speed:1000,
+			        autoplay: 3000,
+			        autoplayDisableOnInteraction: false
+			    });
+	    	</script>
+	    </div>
+	    <!-- 导航菜单 -->
+	    <div class="navWrap">
+	    	<ul>
+	    		<li>
+	    			<a href="./hotel/hotel_list.html">
+	    				<img src="jw-imgs/m3.png" alt="">
+	    				<p>酒店住宿</p>
+	    			</a>
+	    		</li>
+	    		<li>
+	    			<a href="./ticket/ticket_list.html">
+	    				<img src="jw-imgs/m4.png" alt="">
+	    				<p>景区门票</p>
+	    			</a>
+	    		</li>
+	    		<li>
+	    			<a href="./nongjiale/nongjiale_list.html">
+	    				<img src="jw-imgs/m1.png" alt="">
+	    				<p>农家乐</p>
+	    			</a>
+	    		</li>
+	    		<li>
+	    			<a href="./minsu/ms_list.html">
+	    				<img src="jw-imgs/m2.png" alt="">
+	    				<p>客栈民宿</p>
+	    			</a>
+	    		</li>
+	    		<li>
+	    			<a href="./views/food/food.html">
+	    				<img src="jw-imgs/m6.png" alt="">
+	    				<p>餐饮美食</p>
+	    			</a>
+	    		</li>
+	    		<li>
+	    			<a href="./views/recommend/recommend.html">
+	    				<img src="jw-imgs/m7.png" alt="">
+	    				<p>推荐路线</p>
+	    			</a>
+	    		</li>
+	    		<li>
+	    			<a href="./views/strategy/strategy.html">
+	    				<img src="jw-imgs/m8.png" alt="">
+	    				<p>旅游攻略</p>
+	    			</a>
+	    		</li>
+	    		<li>
+	    			<a href="./views/traffic/traffic.html">
+	    				<img src="jw-imgs/m5.png" alt="">
+	    				<p>交通</p>
+	    			</a>
+	    		</li>
+	    	</ul>
+	    </div>
+	    <!-- 新闻资讯滚动 -->
+	    <div class="scroll-box">
+	    	<img src="jw-imgs/zx.png" alt="">
+	    	<div id="scrollDiv">
+                <ul class="scroll-content">
+                    <li class="odd-ellipsis">
+	                    <span class="tab">热点</span>
+	                    贾汪:全面建成资源枯竭城市转型创新实验区...
+                    </li>
+                    <li class="odd-ellipsis">
+                    	<span class="tab">资讯</span>
+                    	徐州贾汪:从采煤塌陷地到全域旅游区的蝶变
+                    </li>
+                    <li class="odd-ellipsis">
+	                    <span class="tab">热点</span>
+	                    徐州贾汪等四地入选江苏乡村旅游创新示范区...
+                    </li>
+                    <li class="odd-ellipsis">
+                    	<span class="tab">资讯</span>
+                    	江苏乡村旅游节现场侧记:秀美贾汪引来八方客
+                    </li>
+                </ul>
+            </div>
+	    </div>
+	    <!-- 七个板块入口 -->
+	    <!--<div class="item-all-box clearfix">-->
+	    	<!--<div class="item-big-list1">-->
+	    		<!--<a href="javascript:;" title="">-->
+		    		<!--<h1>行程计划</h1>-->
+		    		<!--<p style="color:#ecb048;margin-bottom:.2rem">浪漫无处不在</p>-->
+		    		<!--<img src="jgs-imgs/l1.png" alt="" style="width:1.04rem;height: 1.1rem;">-->
+	    		<!--</a>-->
+	    	<!--</div>-->
+	    	<!--<div class="item-big-list2">-->
+	    		<!--<a href="javascript:;" title="">-->
+		    		<!--<h1>接送服务</h1>-->
+		    		<!--<p style="color:#59b53e">让您旅游无忧</p>-->
+		    		<!--<img src="jgs-imgs/l2.png" alt="" style="width:1.39rem;height: 1.17rem;">-->
+		    	<!--</a>-->
+	    	<!--</div>-->
+	    	<!--<div class="item-big-list3">-->
+	    		<!--<a href="javascript:;" title="">-->
+		    		<!--<h1>行李寄送</h1>-->
+		    		<!--<p style="color:#e06b5a;margin-bottom:.2rem">便捷服务从心做起</p>-->
+		    		<!--<img src="jgs-imgs/l3.png" alt="" style="width:1.01rem;height: 1.01rem;">-->
+		    	<!--</a>-->
+	    	<!--</div>-->
+	    	<!--<div class="item-sm-list4">-->
+		    	<!--<a href="jj-news.html" title="">-->
+		    		<!--<h1>动态</h1>-->
+		    		<!--<p style="color:#59b53e;margin-bottom:.2rem">城市动态尽掌握</p>-->
+		    		<!--<img src="jgs-imgs/l4.png" alt="" style="width:1.02rem;height: 1.02rem;">-->
+		    	<!--</a>-->
+	    	<!--</div>-->
+	    	<!--<div class="item-sm-list5">-->
+	    		<!--<a href="javascript:;" title="">-->
+		    		<!--<h1>论坛</h1>-->
+		    		<!--<p style="color:#ecb048;margin-bottom:-.1rem">热门旅游话题</p>-->
+		    		<!--<img src="jgs-imgs/l5.png" alt="" style="width:1.6rem;height: 1.6rem;">-->
+		    	<!--</a>-->
+	    	<!--</div>-->
+	    	<!--<div class="item-sm-list6">-->
+		    	<!--<a href="jj-travel.html" title="">-->
+		    		<!--<h1>攻略</h1>-->
+		    		<!--<p style="color:#e06b5a;margin-bottom:.2rem">不错过每一处</p>-->
+		    		<!--<img src="jgs-imgs/l6.png" alt="" style="width:1.04rem;height: 1.01rem;">-->
+		    	<!--</a>-->
+	    	<!--</div>-->
+	    	<!--<div class="item-sm-list7">-->
+		    	<!--<a href="javascript:;" title="">-->
+		    		<!--<h1>交通</h1>-->
+		    		<!--<p style="color:#59b53e;margin-bottom:.2rem">四通八达</p>-->
+		    		<!--<img src="jgs-imgs/l7.png" alt="" style="width:1.01rem;height: 1.01rem;">-->
+		    	<!--</a>-->
+	    	<!--</div>-->
+	    <!--</div>-->
+	    <!-- 精选推荐 -->
+	    <div class="group-item-box clearfix">
+	    	<!-- 标题 -->
+	    	<div class="title">
+	    		<span>精选推荐</span>
+	    		<a href="http://jwlyw.com/jiawang/cms/mobile/route/index" title="" class="right">更多<i class="iconfont icon-r"></i></a>
+	    	</div>
+	    	<!-- 内容banner -->
+	    	<div class="tuijian-img">
+	    		<img src="jw-imgs/tj-bann.png" alt="">
+	    	</div>
+	    	<!-- 内容分类 -->
+	    	<div class="tuijian-fl-box">
+	    		<div class="tuijian-fl-l1">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/chi_list" title="">
+		    			<div class="tuijian-img-l">
+		    				<img src="jw-imgs/tj1.jpg" alt="">
+		    				<img src="jw-imgs/tj2.jpg" alt="">
+		    			</div>
+		    			<div class="tuijian-img-r">
+		    				<img src="jw-imgs/tj3.jpg" alt="">
+		    			</div>
+		    			<p class="tt">八大美食</p>
+		    		</a>
+	    		</div>
+	    		<div class="tuijian-fl-l2">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/le_list" title="">
+		    			<div class="tuijian-img-r">
+		    				<img src="jw-imgs/tj4.jpg" alt="">
+		    			</div>
+		    			<div class="tuijian-img-l">
+		    				<img src="jw-imgs/tj5.jpg" alt="">
+		    				<img src="jw-imgs/tj6.jpg" alt="">
+		    			</div>
+		    			<p class="tt">农家乐</p>
+		    		</a>
+	    		</div>
+	    		<div class="tuijian-fl-l3">
+		    		<a href="javascript:;" title="">
+		    			<div class="tuijian-img-l">
+		    				<img src="jw-imgs/tj7.jpg" alt="">
+		    				<img src="jw-imgs/tj8.jpg" alt="">
+		    			</div>
+		    			<div class="tuijian-img-r">
+		    				<img src="jw-imgs/tj9.jpg" alt="">
+		    			</div>
+		    			<p class="tt">十佳导游</p>
+	    			</a>
+	    		</div>
+	    		<div class="tuijian-fl-l4">
+		    		<a href="javascript:;" title="">
+		    			<div class="tuijian-img-r">
+		    				<img src="jw-imgs/tj10.jpg" alt="">
+		    			</div>
+		    			<div class="tuijian-img-l">
+		    				<img src="jw-imgs/tj11.jpg" alt="">
+		    				<img src="jw-imgs/tj12.jpg" alt="">
+		    			</div>
+		    			<p class="tt">六大旅行社</p>
+	    			</a>
+	    		</div>
+	    	</div>
+	    </div>
+	    <!-- 热门活动 -->
+		<div class="group-item-box clearfix">
+	    	<!-- 标题 -->
+	    	<div class="title">
+	    		<span>热门活动</span>
+	    		<a href="javascript:;" title="" class="right">更多<i class="iconfont icon-r"></i></a>
+	    	</div>
+	    	<!-- 内容 -->
+	    	<div class="hot-item-box clearfix">
+	    		<div class="hot-list-big">
+					<a href="http://jwlyw.com/jiawang/cms/mobile/product/chi_list">
+						<img src="jw-imgs/hot1.png" alt="" class="img1">
+						<p class="tt">特色美食 优惠多多</p>
+					</a>
+	    		</div>
+	    		<div class="hot-list-sm">
+					<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_list">
+						<img src="jw-imgs/hot2.png" alt="">
+						<p class="tt">热销线路</p>
+						<p class="tt">精彩畅玩贾汪</p>
+					</a>
+	    		</div>
+	    		<div class="hot-list-sm" style="border-right: 0;">
+					<a href="http://jwlyw.com/jiawang/cms/mobile/product/zhu_list">
+						<img src="jw-imgs/hot3.png" alt="">
+						<p class="tt">精选酒店</p>
+						<p class="tt">缤智如归的服务</p>
+					</a>
+	    		</div>
+	    		<div class="hot-list-big">
+					<a href="http://jwlyw.com/jiawang/cms/mobile/route/index">
+						<img src="jw-imgs/hot4.png" alt="" class="img2">
+						<p class="tt">核心景区 尽情享受</p>
+					</a>
+	    		</div>
+	    		<div class="hot-list-sm">
+					<a href="http://jwlyw.com/jiawang/cms/mobile/product/le_list">
+						<img src="jw-imgs/hot5.png" alt="">
+						<p class="tt">购物娱乐</p>
+						<p class="tt">一站式服务</p>
+					</a>
+	    		</div>
+	    		<div class="hot-list-sm" style="border-right: 0;">
+					<a href="http://jwlyw.com/jiawang/cms/mobile/picture/index">
+						<img src="jw-imgs/hot6.png" alt="">
+						<p class="tt">"美无界"大赛</p>
+						<p class="tt">拍出心中的世界</p>
+					</a>
+	    		</div>
+	    	</div>
+	    </div>
+	    <!-- 畅玩线路 -->
+	    <div class="group-item-box clearfix">
+	    	<!-- 标题 -->
+	    	<div class="title">
+	    		<span>畅玩线路</span>
+	    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_list" title="" class="right">更多<i class="iconfont icon-r"></i></a>
+	    	</div>
+	    	<!-- 内容 -->
+	    	<div class="play-item-box clearfix">
+	    		<div class="play-list-top">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/route/detail?id=2007" title="">
+		    			<img src="jw-imgs/play1.jpg" alt="">
+		    			<p class="odd-ellipsis">大洞山主峰是徐州第一高峰</p>
+		    			<p class="price"><span>￥90</span>起</p>
+	    			</a>
+	    		</div>
+	    		<div class="play-list-top no-bor-r">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/route/detail?id=2002" title="">
+		    			<img src="jw-imgs/play2.jpg" alt="">
+		    			<p class="odd-ellipsis">南有云龙湖，北有潘安湖</p>
+		    			<p class="price"><span>￥198</span>起</p>
+	    			</a>
+	    		</div>
+	    		<div class="play-list-btm">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/route/detail?id=2006" title="">
+		    			<img src="jw-imgs/play3.jpg" alt="">
+		    			<p>徐州督公湖唯一山环水抱的“高山流水”之地</p>
+		    			<p class="price"><span>￥130</span>起</p>
+	    			</a>
+	    		</div>
+	    		<div class="play-list-btm no-bor-r">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_detail?id=10251" title="">
+		    			<img src="jw-imgs/play4.jpg" alt="">
+		    			<p>墨上集民俗文化园养生度假旅游之黄金地</p>
+		    			<p class="price"><span>￥95</span>起</p>
+	    			</a>
+	    		</div>
+	    		<div class="play-list-btm">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/route/detail?id=2003" title="">
+		    			<img src="jw-imgs/play5.jpg" alt="">
+		    			<p>紫海蓝山薰衣草文化创意园-普罗旺斯称号</p>
+		    			<p class="price"><span>￥130</span>起</p>
+	    			</a>
+	    		</div>
+	    		<div class="play-list-btm no-bor-r">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/route/detail?id=2005" title="">
+		    			<img src="jw-imgs/play6.jpg" alt="">
+		    			<p>凤鸣海依托独特水系、山体及丰厚历史文化景区</p>
+		    			<p class="price"><span>￥95</span>起</p>
+	    			</a>
+	    		</div>
+	    	</div>
+	    </div>
+	    <!-- 促销门票 -->
+	    <div class="group-item-box clearfix">
+	    	<!-- 标题 -->
+	    	<div class="title">
+	    		<span>促销门票</span>
+	    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_list" title="" class="right">更多<i class="iconfont icon-r"></i></a>
+	    	</div>
+	    	<!-- 内容 -->
+	    	<div class="play-item-box clearfix">
+	    		<div class="play-list-top">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_detail?id=6001" title="">
+		    			<img src="jw-imgs/t1.jpg" alt="">
+		    			<p class="odd-ellipsis">大洞山景区</p>
+		    			<p class="price"><span>￥30</span>起</p>
+					</a>
+	    		</div>
+	    		<div class="play-list-top no-bor-r">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_detail?id=6006" title="">
+		    			<img src="jw-imgs/t2.jpg" alt="">
+		    			<p class="odd-ellipsis">卧龙泉博物园</p>
+		    			<p class="price"><span>￥20</span>起</p>
+	    			</a>
+	    		</div>
+	    		<div class="play-list-ticket">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_detail?id=6003" title="">
+		    			<img src="jw-imgs/t3.jpg" alt="">
+		    			<p class="even-ellipsis tt">情醉督公湖</p>
+		    			<p class="price"><span>￥20</span>起</p>
+	    			</a>
+	    		</div>
+	    		<div class="play-list-ticket">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_detail?id=6002" title="">
+		    			<img src="jw-imgs/t4.jpg" alt="">
+		    			<p class="even-ellipsis tt">千古一梦潘安湖</p>
+		    			<p class="price"><span>￥40</span>起</p>
+	    			</a>
+	    		</div>
+	    		<div class="play-list-ticket no-bor-r">
+		    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/you_detail?id=6005" title="">
+		    			<img src="jw-imgs/t5.jpg" alt="">
+		    			<p class="even-ellipsis tt">凤鸣海雅乐</p>
+		    			<p class="price"><span>￥40</span>起</p>
+	    			</a>
+	    		</div>
+	    	</div>
+	    </div>
+	    <!-- 特惠酒店 -->
+	    <div class="group-item-box clearfix" style="margin-bottom: 0;">
+	    	<!-- 标题 -->
+	    	<div class="title">
+	    		<span>特惠酒店</span>
+	    		<a href="http://jwlyw.com/jiawang/cms/mobile/product/zhu_list" title="" class="right">更多<i class="iconfont icon-r"></i></a>
+	    	</div>
+	    	<!-- 内容 -->
+			<div class="hotel-list-box">
+				<a href="http://jwlyw.com/jiawang/cms/mobile/product/zhu_detail?id=10079">
+					<img src="jw-imgs/h1.jpg" alt="">
+					<p class="odd-ellipsis tt">徐州龙山大酒店</p>
+					<span class="icon">
+						<i class="iconfont icon-jj"></i>
+						<i class="iconfont icon-ic_local_parking_px"></i>
+						<i class="iconfont icon-xc"></i>
+						<i class="iconfont icon-wuxianwangqia"></i>
+					</span>
+					<p class="price"><span>￥999</span>起</p>
+				</a>
+			</div>
+			<div class="hotel-list-box">
+				<a href="http://jwlyw.com/jiawang/cms/mobile/product/zhu_detail?id=10087">
+					<img src="jw-imgs/h2.jpg" alt="">
+					<p class="odd-ellipsis tt">徐州紫海蓝山乡村</p>
+					<span class="icon">
+						<i class="iconfont icon-jj"></i>
+						<i class="iconfont icon-ic_local_parking_px"></i>
+						<i class="iconfont icon-xc"></i>
+						<i class="iconfont icon-wuxianwangqia"></i>
+					</span>
+					<p class="price"><span>￥899</span>起</p>
+				</a>
+			</div>
+			<div class="hotel-list-box">
+				<a href="http://jwlyw.com/jiawang/cms/mobile/product/zhu_detail?id=7001">
+					<img src="jw-imgs/h3.jpg" alt="">
+					<p class="odd-ellipsis tt">天智国际大酒店</p>
+					<span class="icon">
+						<i class="iconfont icon-jj"></i>
+						<i class="iconfont icon-ic_local_parking_px"></i>
+						<i class="iconfont icon-xc"></i>
+						<i class="iconfont icon-wuxianwangqia"></i>
+					</span>
+					<p class="price"><span>￥1100</span>起</p>
+				</a>
+			</div>
+	    </div>
+		<!-- 底部说明 -->
+		<div class="foot-box">
+			<p>贾汪旅游官方预定©版权所有</p>
+			<p>溜溜云大数据科技有限公司技术支持</p>
+		</div>
+    </div>
+	<script type="text/javascript">
+	// 新闻资讯滚动
+	function AutoScroll(obj){
+        $(obj).find("ul:first").animate({
+            marginTop:"-.4rem"
+        },800,function(){
+            $(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+        });
+	}
+	$(document).ready(function(){
+	setInterval('AutoScroll("#scrollDiv")',2500)
+	});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

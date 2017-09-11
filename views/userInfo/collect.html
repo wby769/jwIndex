@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>收藏列表</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="shortcut icon" href="http://photo.66diqiu.com/uploads/100002/favicon.jpg" mce_href="http://photo.66diqiu.com/uploads/100002/favicon.jpg" type="image/x-icon">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-tap-highlight" content="no">
+     <link rel="stylesheet" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/style.css?_=22121" type="text/css">
+<!--    <link rel="stylesheet" href="--><!--static/template/--><!--/mobile/css/base.css?_=22121" type="text/css">-->
+    <link rel="stylesheet" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/dl.css" type="text/css">
+    <link href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/component.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">.content table td{ border:1px solid} .swiper-container {width: 100%; }   .swiper-container img{width: 100%;}  </style>    <link rel="stylesheet" type="text/css" href="http://nbbc.66diqiu.com/static/template/tiyan/mobile/css/dialog.css" />
+    <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/default.css"/>
+    <script src="../../js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/mobilecommon.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/slider.js"></script>
+    <script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/dialog.js"></script>
+    <!--<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/tiyan/mobile/js/jquery.lazyload.js"></script>-->
+    <script type="text/javascript">
+        var baseurl = 'http://nbbc.66diqiu.com',
+            basemobileurl = 'http://nbbc.66diqiu.com/mobile/index',
+            ADMINID = 0,
+            USERID = 104646,
+            loginUrl = 'http://nbbc.66diqiu.com/mobile/member/logout' ;
+        function unset_login(){
+            $.post(loginUrl,{
+                action:'unset'
+            },function(data){
+                var json = eval("("+data+")");
+                if(json['status']=='1'){
+                    if(json['action']=='unset'){
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/mobilecommon.js"></script>
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/slider.js"></script>
+<script type="text/javascript" src="http://nbbc.66diqiu.com/static/template/default/mobile/js/dialog.js"></script>
+<style>
+    #my-info{color:#3fdbea;}
+    .no-data{
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+        padding-top: 10px;
+        color: #bbb;
+    }
+    .edit-btn{
+    	color: #3fdbea;
+    	background: transparent;
+    	padding: 0px 5px;
+    }
+</style>
+<div class="divBox box">
+    <div id="js-datalist box">
+                <div class="fav-list-wrap box" >
+                    <ul id="js-fav-wrap" class="fav-list box">
+                        <li class="fav-list-item box">
+                        <a href="http://nbbc.66diqiu.com/mobile/line/profile?id=933489">
+                            <div class="item-img box">
+                                <img src="http://photo.66diqiu.com/uploads/756/ue/image/20141222/1419216610744697.jpg">
+                            </div>
+                        </a>
+                         <div class="item-main">
+                             <p class="even-ellipsis">[【测试】千岛湖-杭州西湖-花港观鱼-桐庐瑶琳仙境...]</p>
+                             <a href="./collect-detail.html"><span class="item-button edit-btn"> 旅游攻略 </span></a>
+                             <span class="shoucang" style="float: right;">收藏时间：2017-08-24</span>
+                         </div>
+                    </li>
+                     <li class="fav-list-item box">
+                        <a href="http://nbbc.66diqiu.com/mobile/line/profile?id=933489">
+                            <div class="item-img box">
+                                <img src="http://photo.66diqiu.com/uploads/756/ue/image/20141222/1419216610744697.jpg">
+                            </div>
+                        </a>
+                         <div class="item-main">
+                             <p class="even-ellipsis">[【测试】千岛湖-杭州西湖-花港观鱼-桐庐瑶琳仙境...]</p>
+                             <a href="./collect-detail.html"><span class="item-button edit-btn"> 旅游攻略 </span></a>
+                             <span class="shoucang" style="float: right;">收藏时间：2017-08-24</span>
+                         </div>
+                    </li>
+                    <li class="fav-list-item box">
+                        <a href="http://nbbc.66diqiu.com/mobile/line/profile?id=933489">
+                            <div class="item-img box">
+                                <img src="http://photo.66diqiu.com/uploads/756/ue/image/20141222/1419216610744697.jpg">
+                            </div>
+                        </a>
+                         <div class="item-main">
+                             <p class="even-ellipsis">[【测试】千岛湖-杭州西湖-花港观鱼-桐庐瑶琳仙境...]</p>
+                             <a href="./collect-detail.html"><span class="item-button edit-btn"> 旅游攻略 </span></a>
+                             <span class="shoucang" style="float: right;">收藏时间：2017-08-24</span>
+                         </div>
+                    </li>
+                   </ul>
+                  </div>
+    </div>
+</div>
+<script type="text/javascript">
+      var URLPRE = 'http://nbbc.66diqiu.com/';
+    $(function(){
+        $('#js-fav-wrap').find('img').error(function(){
+            $(this).attr('src',URLPRE+'static/public/images/nophoto.jpg');
+        })
+        var slid = $("#sliderimg").slider({
+            loop: true
+        });
+        var page = 2;
+        var url = 'http://nbbc.66diqiu.com/mobile/member/favourite_list';
+        var del_url = 'http://nbbc.66diqiu.com/mobile/member/delete_favourite';
+        $(window).scroll(function(){
+            totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
+            console.log($(document).height())
+            if ($(document).height() <= totalheight) {
+                var $js_load_more = $('#js-load-more');
+                $js_load_more.text('加载中...');
+                $.get(url+(url.indexOf('?')!=-1 ?'&':'/?')+'isajax=1&type=1&page='+page, function(data){
+                    if(data.length>0){
+                        var html = '';
+                        for(var i =0; i<data.length; i++){
+                            var item = data[i];
+                            html += '<li class="fav-list-item box">'+
+                                '<a href="'+item.link+'">'+
+                                '<div class="item-img box">'+
+                                '<img src="http://image.66diqiu.cn/'+item.cover+'">'+
+                                '</div></a>'+
+                                '<div class="item-main">'+
+                                '<p class="even-ellipsis">'+item.title+'</p><span class="shoucang">收藏时间：'+item.crts+'</span>'+
+                                '<span class="item-button2 js-del-fav"  data-id=" '+item.id+'取消收藏</span>'+
+                                '<a href="'+item.link+'">'+
+                                '<span class="item-button">查看详情</span>'+
+                                '</a></div>'+
+                                '</li>';
+                        }
+                        $('#js-fav-wrap').append(html);
+                        page ++;
+                    }else{
+
+                        $.dialog({
+                            style:'tip',
+                            width:200,
+                            closeTime:1000,
+                            content: '<p style="text-align: center;font-size:14px;">没有更多了</p>'
+                        }).open();
+                    }
+                    $js_load_more.text('加载完毕');
+                },'json');
+            }
+        });
+        $('.js-del-fav').click(function(){
+            var data_id = $(this).data('id');
+            that =$(this);
+            $.get(del_url+(url.indexOf("?") > -1 ? "&" : "?")+'id='+data_id, function(data){
+
+                if(data.status.length>0){
+                    $.dialog({
+                        style:'tip',
+                        width:200,
+                        closeTime:1000,
+                        content: '<p style="text-align: center;font-size:14px;">'+data.msg+'</p>'
+                    }).open();
+                    if(data.status=='1'){
+                        that.closest('li').remove();
+                    }
+                }
+            },'json');
+        });
+    });
+</script>

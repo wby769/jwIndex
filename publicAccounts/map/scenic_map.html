@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>智慧景区地图</title>
+    <link rel="stylesheet" type="text/css" href="../../css/default.css">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=12faf89f5c1d98cdd1acd317a2e192a7"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+
+     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <!--<script src="public/jquery/jquery-1.11.1.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="map.css">
+</head>
+<body>
+    <div class="divBox" style="position: relative;height: 100%">
+        <div id="container">
+            <div id="scale">
+                <a>正常</a>
+                <a>预警</a>
+                <a>报警</a>
+            </div>
+        </div>
+        <div class="daohang">
+            <table>
+                <tr>
+                    <td id="ALL" onclick="show_all()"><img src="img/ALL2.png"><span>全部</span></td>
+                </tr>
+                <tr>
+                    <td id="MONITOR" onclick="hide_all('MONITOR')"><img src="img/MONITOR.png"><span>监控</span></td>
+                </tr>
+                <tr>
+                    <td id="HOTEL" onclick="hide_all('HOTEL')"><img src="img/HOTEL.png"><span>酒店</span></td>
+                </tr>
+                <tr>
+                    <td id="SCENIC" onclick="hide_all('SCENIC')"><img src="img/SCENIC.png"><span>景区</span></td>
+                </tr>
+                <tr>
+                    <td id="PARK" onclick="hide_all('PARK')"><img src="img/PARK.png"><span>停车场</span></td>
+                </tr>
+                <tr>
+                    <td id="CATER" onclick="hide_all('CATER')"><img src="img/CATER.png"><span>餐饮</span></td>
+                </tr>
+                <tr>
+                    <td id="TOILET" onclick="hide_all('TOILET')"><img src="img/TOILET.png"><span>卫生间</span></td>
+                </tr>
+                <!--<tr>-->
+                    <!--<td id="HOT" onclick="hide_all('HOT')"><img src="img/HOT.png"><span>热力图</span></td>-->
+                <!--</tr>-->
+                <tr>
+                    <td id="SERVE" onclick="hide_all('SERVE')"><img src="img/SERVE.png"><span>服务中心</span></td>
+                </tr>
+            </table>
+        </div>
+        <!--菜单-->
+        <nav class="map-nav box">
+            <div class="nav-active"><a href="javascript:;">潘安湖</a></div>
+            <div><a href="scenic_map11.html">凤鸣海</a></div>
+            <div><a href="scenic_map18.html">督公湖</a></div>
+            <div><a href="scenic_map25.html">大洞山</a></div>
+        </nav>
+    </div>
+<script type="text/javascript">
+
+    $.ajax({
+        type: "GET",
+        async: false,
+        url: "http://zhifa.66diqiu.com/api/get_mark?id=1",
+        xhrFields: {
+            withCredentials: true,
+        },
+        // data:  $('form').serialize()+'&is_mobile=1',
+       dataType: "jsonp",
+       jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+       jsonpCallback:"myHandler",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+        success: function(data){
+            add_mark(data);
+        },
+        error: function(){
+            // console.log(data)
+            // location.href= 'admin.html'
+        }
+    })
+    //初始化地图对象，加载地图
+    var district, map = new AMap.Map("container", {
+        resizeEnable: true,
+        // center: [116.397428, 39.90923],//地图中心点
+        // zoom: 18, //地图显示的缩放级别
+       isHotspot:true
+    });
+
+
+    function add_mark(data){
+        var lnglats = '';
+        lnglats = data;
+
+
+        var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
+        for (var i = 0, marker; i < lnglats.length; i++) {
+            if(lnglats[i][3]=='MONITOR'){
+                var pix=[-70,-90];
+            }else if(lnglats[i][3]=='HOTEL'){
+                var pix=[-70,-180];
+            }else if(lnglats[i][3]=='SCENIC'){
+                var pix=[-70,0];
+            }else if(lnglats[i][3]=='PARK'){
+                var pix=[-70,-40];
+            }else if(lnglats[i][3]=='CATER'){
+                var pix=[-70,-135];
+            }else if(lnglats[i][3]=='TOILET'){
+                var pix=[-70,-220];
+            }else if(lnglats[i][3]=='SERVE'){
+                var pix=[-70,-260];
+            }
+            var marker = new AMap.Marker({
+                    position: [lnglats[i][0],lnglats[i][1]],
+                    map: map,
+                    icon: new AMap.Icon({            
+                        size: new AMap.Size(40, 50),  //图标大小
+                        image: "img/map_btn.png",//点图标图片样式
+                        imageOffset: new AMap.Pixel(pix[0], pix[1])
+                    })         
+            });
+
+            marker.setLabel({
+                offset: new AMap.Pixel(-10, 45),//修改label相对于maker的位置
+                content: "<a class='"+lnglats[i][3]+"' href='#'>"+lnglats[i][2]+"</a>"
+            });
+            marker.content = '<div class="info-top"><div>'+lnglats[i][2]+'</div></div><div class="info-middle" style="background-color: white;"><img src="http://tpc.googlesyndication.comsimgad/5843493769827749134">地址：'+lnglats[i][4]+'<br>电话：'+lnglats[i][5]+'</div><div class="info-bottom" style="position: relative; top: 0px; margin: 0px auto;"></div>';
+            marker.on('click', markerClick);//点击显示信息窗口事件绑定
+            //marker.emit('click', {target: marker});//默认显示一个信息窗口
+        }
+        function markerClick(e) {
+            infoWindow.setContent(e.target.content);
+            infoWindow.open(map, e.target.getPosition());
+        }
+        map.setFitView();
+    }
+
+
+    function hide_all(type){
+        $('.amap-markers').find('.amap-marker').hide();//隐藏所有marker
+        if(type=='HOT'){
+            img_start();
+            $('#HOT img').attr('src','img/HOT2.png');
+        }else{
+            img_start();
+            $('#'+type+' img').attr('src','img/'+type+'2.png');
+            $('.amap-markers').find('.'+type+'').parent().parent().show();
+        }
+        
+    }
+
+    function show_all(){
+        $('.amap-markers').find('.amap-marker').show();  //显示所有marker
+        img_start();
+        $('#ALL img').attr('src','img/ALL2.png');
+
+    }
+    function img_start(){
+        map.clearInfoWindow();//关闭图标弹窗
+        $('#ALL img').attr('src','img/ALL.png');
+        $('#MONITOR img').attr('src','img/MONITOR.png');
+        $('#HOTEL img').attr('src','img/HOTEL.png');
+        $('#SCENIC img').attr('src','img/SCENIC.png');
+        $('#PARK img').attr('src','img/PARK.png');
+        $('#CATER img').attr('src','img/CATER.png');
+        $('#TOILET img').attr('src','img/TOILET.png');
+        $('#HOT img').attr('src','img/HOT.png');
+        $('#TRAFFIC img').attr('src','img/TRAFFIC.png');
+        $('#SERVE img').attr('src','img/SERVE.png');
+    }
+</script>
+</body>
+</html>
